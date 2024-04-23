@@ -191,6 +191,9 @@ public class Methods {
     }
 
     // TODO: Создайте метод кошелек , у него есть началная сумма и можно вычитать пока деньги не кончатся или сумма не будет слишком велика
+
+
+
     public static String wallet(int summation, int score) {
         if (score > summation) {
             return " balance is negative ";
