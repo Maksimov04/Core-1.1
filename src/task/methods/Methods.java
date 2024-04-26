@@ -1,6 +1,7 @@
 package task.methods;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Methods {
     public static void main(String[] args) {
@@ -9,6 +10,10 @@ public class Methods {
         // Ожидаемый результат hello System.out.println(string);
         // Вызовы ваших методов
 
+
+
+        System.out.println();
+
     }
 
     // Метод принимающий строку и преобразующий ее в нижний регистр
@@ -16,20 +21,22 @@ public class Methods {
         return example.toLowerCase();
     }
 
+
+
 // Реализуйте функциональность согласно описанию
 
     // TODO: Создайте метод который вернет сумму двух чисел
-    int sum1(int a, int b) {
-        int c = a + b;
-        return c;
+     public static int sum1(int a, int b) {
+
+        return  a  +  b ;
     }
 
 
     // TODO: Создайте метод который вернет сумму двух переданных строк
-    String sum2(String a, String b) {
+    public static String sumString(String string, String subString ) {
 
-        String c = a + b;
-        return c;
+
+        return string.concat(subString);
 
     }
 
@@ -38,14 +45,10 @@ public class Methods {
     //  обернуть их в строку и вернуть результат строкой
 
 
-    public static String sum3(String b, int a) {
+    public static String sumIntegerToStr (String str, int value) {
 
-        String text = "";
 
-        int b1 = Integer.parseInt(text);
-        int sum = (a + b1);
-
-        return Integer.toString(sum);
+        return String.valueOf(Integer.parseInt(str,value));
 
     }
 
@@ -53,30 +56,25 @@ public class Methods {
 // TODO: Создайте метод который принимает строку , число . Внутри строки передается число . Проверить , что если число внутри строки больше чем
 //  число которое передается как int , то пусть метод вернет false , а если меньше , то true
 
-    public boolean sum4(String b, int a) {
+    public static boolean compareStringToInt (String str, int number ) {
 
 
-        String text = "";
-        int b1 = Integer.parseInt(text);
-        boolean c = (b1 > a);
-        return c;
+
+        return Integer.parseInt(str)>number ;
     }
 
 
 // TODO: Создайте метод который принимает 2 булевые переменные . Если обе true , верни true , если хоть одна из них true верни true ,
 //  если обе false верни false
 
-    public boolean equals(boolean a, boolean b) {
-        boolean a1 = true;
-        boolean b1 = true;
-        boolean c = (a1 == b1);
+    public boolean equals (boolean a, boolean b) {
 
-        return equals(c);
+        return a||b;
     }
 
 
     // TODO: Создайте метод который принимает число и вернет true если оно четное , и false если оно не четное
-    public static boolean sum5(int a) {
+    public static boolean checkEven(int a) {
 
         return (a % 2 == 0);
     }
@@ -124,64 +122,52 @@ public class Methods {
 // TODO: Создайте методы в которые можно будет передавать свой возраст , а возвращаться сколько полных месяцев в этом возрасте ,
 //  тоесть если человек прожил 10 лет , это 120 месяцевтак же сделайте перевод возраста в минуты и метод который расчетает возраст в часах
 
-    public static int age(int a) {
+    public static int ageToMonth(int age) {
 
-        int age = 25;
-        int months = 12;
 
-        return (age * months);
+
+        return (age * 12);
+    }
+
+    public static int  intAgeToMinutes(int age) {
+
+
+        return (age * 525600);
     }
 
 
-    public static int age1(int a) {
-
-        int age = 25;
-        int minutesPerYear = 525600;
-
-        return (age * minutesPerYear);
-    }
+    public static int  intAgeToHours (int age) {
 
 
-    public static int age3(int a) {
-
-        int age = 25;
-        int hoursPerYear = 8760;
-
-        return (age * hoursPerYear);
+        return (age *  8760);
     }
 // TODO: Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра
 
-    public static boolean name(String a, String b) {
+    public static boolean checkEqualsName(String name, String name1) {
 
 
-        return (a == b);
+        return name.equals(name1);
     }
 
 
     // TODO: Создайте метод которому можно передать массив элементов , а он вернет последний элемент
-    public static int myMetod(int[] array) {
-        int[] array1 = {1, 2, 3, 4, 5, 6, 7};
-        int x = 7;
-        int xIndex = -1;
+    public static int getLastIntInArray(int[] array) {
 
 
-        int i;
-        for (i = 0; i < array1.length; i++) {
-            if (array1[i] == x) {
-                xIndex = i;
 
-            }
-        }
-        return xIndex;
+
+
+
+        return array[array.length-1] ;
     }
 
 
 // TODO: Создайте метод счетчик букв А . Подается строка и метод посчитает сколько букв А в строке
 
-    public static int chek1(String a) {
+    public static int checkCharInString(String a) {
         int count = 0;
         for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) == 'a') {
+            if (a.toUpperCase().charAt(i) == 'A') {
                 count++;
             }
         }
