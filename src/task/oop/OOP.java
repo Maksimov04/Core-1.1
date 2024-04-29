@@ -22,25 +22,25 @@ public class OOP {
 
         }
 
-        public int sum1(String b, int a) {
+        public int sumFromString(String str, int num) {
 
-            return Integer.parseInt(b) + a;
+            return Integer.parseInt(str) + num;
 
         }
 
-        public String sum3(String a) {
+        public String returnString (String str) {
 
-            return a;
+            return str;
         }
 
-        public void print() {
+        public void printParent() {
 
             System.out.println();
 
         }
 
-        public String sum4(String a, String b) {
-            return a.concat(b);
+        public String concatenateStrings(String str1, String str2) {
+            return str1.concat(str2);
 
 
         }
@@ -64,28 +64,28 @@ public class OOP {
         }
 
         @Override
-        public int sum1(String b, int a) {
+        public int sumFromString(String str, int num) {
 
-            return (Integer.parseInt(b) + a) * 2;
+            return (Integer.parseInt(str) + num) * 2;
         }
 
         @Override
-        public String sum3(String a) {
+        public String returnString (String str) {
 
 
-            return String.valueOf(a.charAt(0));
+            return String.valueOf(str.charAt(0));
         }
 
         @Override
-        public void print() {
+        public void printParent() {
 
             System.out.println("I am Child1");
         }
 
         @Override
-        public String sum4(String a, String b) {
+        public String concatenateStrings(String str1, String str2) {
 
-            return a.substring(0, 6);
+            return str1.concat(str2).substring(0,6);
 
         }
     }
@@ -106,20 +106,20 @@ public class OOP {
         }
 
 
-        public int sum1(String a, String b, String c) {
-            return Integer.parseInt(a) + Integer.parseInt(b) + Integer.parseInt(c);
+        public int  sumFromString(String str1, String str2, String str3) {
+            return Integer.parseInt(str1) + Integer.parseInt(str2) + Integer.parseInt(str3);
         }
 
 
-        public String sum2(String a, String b) {
+        public String concatenateStrings1(String str1, String str2) {
 
-            return a.concat(b);
+            return str1.concat(str2);
         }
 
 
-        public String sum3(String a, String b, String c) {
+        public String concatenateStrings2(String str1, String str2, String str3) {
 
-            return (a.concat(b).concat(c));
+            return (str1.concat(str2).concat(str3));
 
         }
     }
@@ -131,15 +131,15 @@ public class OOP {
 
 
     abstract class Figura {
-        int kolichestvoStoron = 0;
+        int kolichestvoStoron ;
 
         abstract void ploshad();
 
     }
 
     class Kryg extends Figura {
-        int kolichestvoStoron = 0;
-        int radius = 3;
+        int kolichestvoStoron ;
+        int radius ;
 
         public void ploshad() {
 
@@ -150,9 +150,9 @@ public class OOP {
     }
 
     class Prymougolnik extends Figura {
-        int kolichestvoStoron = 4;
-        int storona1 = 5;
-        int storona2 = 8;
+        int kolichestvoStoron ;
+        int storona1 ;
+        int storona2 ;
 
         public void ploshad() {
             System.out.println("Ploshad prymougolnika = " + storona1 * storona2);
@@ -161,8 +161,8 @@ public class OOP {
     }
 
     class Treygolnik extends Figura {
-        int kolichestvoStoron = 3;
-        int storona1 = 4;
+        int kolichestvoStoron ;
+        int storona1 ;
 
         public void ploshad() {
             System.out.println("Ploshad treygolnik = " + storona1 * storona1);
