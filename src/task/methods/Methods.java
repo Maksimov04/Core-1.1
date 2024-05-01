@@ -28,7 +28,7 @@ public class Methods {
 // Реализуйте функциональность согласно описанию
 
     // TODO: Создайте метод который вернет сумму двух чисел
-    public static int zsum1(int a, int b) {
+    public static int sum(int a, int b) {
 
         return a + b;
     }
