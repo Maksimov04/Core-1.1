@@ -11,11 +11,11 @@ public class Methods {
         // Вызовы ваших методов
         int[] a = new int[4];
         a[0] = 2;
-        a[1] = 4;
-        a[2] = 5;
-        a[3] = 7;
+        a[1] = 2;
+        a[2] = 2;
+        a[3] = 2;
 
-        System.out.println(arrayOfNumbers(a));
+        System.out.println(sumIntInArray(a));
 
     }
 
@@ -112,18 +112,9 @@ public class Methods {
 //  аргументы сложите все числа который переданы в массиве и верните сумму всех чисел
 
     public static int sumIntInArray(int[] array) {
-//
-//        int[] a = new int[4];
-//        int sum = 0;
-//        a[0] = 2;
-//        a[1] = 2;
-//        a[2] = 2;
-//        a[3] = 2;
-//        for (int i = 0; i < a.length; i++) {
-//            sum += a[i];
 
 
-        return array.length;
+        return Arrays.stream(array).sum();
     }
 
 
