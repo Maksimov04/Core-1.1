@@ -41,6 +41,8 @@ public class Rectangle extends Figure {
         Rectangle a = new Rectangle();
         System.out.println(a.setLength(25));
         System.out.println(a.setWidth(20));
+        System.out.println(a.getLength());
+        System.out.println(a.getWidth());
         System.out.println(a.permit());
         System.out.println(a.square());
     }
