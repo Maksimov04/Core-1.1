@@ -2,6 +2,40 @@ package task.oop;
 
 public class OOP {
     public static void main(String[] args) {
+        Parent a = new Parent();
+        System.out.println(a.sum(2, 2));
+        System.out.println(a.sumFromString("4", 2));
+        System.out.println(a.returnString("HELLO"));
+        System.out.println("I am Parent");
+        System.out.println(a.concatenateStrings("Ban", "Ana"));
+
+        Child1 b = new Child1();
+        System.out.println(b.sum(4, 4));
+        System.out.println(b.sumFromString("2", 2));
+        System.out.println(b.returnString("Banana"));
+        System.out.println("I am Child1");
+        System.out.println(b.concatenateStrings("авиамодель", "авиамодель"));
+
+        Child2 c = new Child2();
+        System.out.println(c.sum(4, 4, 4));
+        System.out.println(c.sumFromString("2", "2", "2"));
+        System.out.println(c.concatenateStrings1("Ana", "Nas"));
+        String str = "Ilya";
+        System.out.println("I am Child2" + " " + str);
+        System.out.println(c.concatenateStrings2("Ba", "Na", "Na"));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
@@ -14,7 +48,7 @@ public class OOP {
     //  4. Метод, не принимающий и не возвращающий ничего, лишь выводящий на экран "I am Parent".
     //  5. Метод, возвращающий конкатенацию (сумму двух строк), принимающий 2 строки.
 
-    public class Parent {
+    public static class Parent {
         public int sum(int a, int b) {
 
             return a + b;
@@ -56,7 +90,7 @@ public class OOP {
     //  4. Четвертый метод выводит на экран "I am Child1".
     //  5. Пятый метод после слияния двух строк должен обрезать строку и вернуть только ее половину.
 
-    public class Child1 extends Parent {
+    public static class Child1 extends Parent {
         @Override
         public int sum(int a, int b) {
 
@@ -79,13 +113,13 @@ public class OOP {
         @Override
         public void printParent() {
 
-            System.out.println("I am Child1");
+            System.out.println();
         }
 
         @Override
-        public String concatenateStrings(String str1, String str2) {
+        public  String concatenateStrings(String str1, String str2) {
 
-            return str1.concat(str2).substring(0,6);
+            return  str1.concat(str2).substring(0,(str1.length()+str2.length())/2);
 
         }
     }
@@ -98,7 +132,7 @@ public class OOP {
     //  4. Четвертый метод примет аргумент строку и выведет на экран "I am Child2" + переданная строка.
     //  5. Пятый метод принимает 3 строки и возвращает их конкатенацию.
 
-    class Child2 extends Parent {
+     public static class Child2 extends Parent {
 
 
         public int sum(int a, int b, int c) {
@@ -116,6 +150,12 @@ public class OOP {
             return str1.concat(str2);
         }
 
+        public void printChild2 (String srt) {
+
+
+            System.out.println("I am Child2"+srt);
+        }
+
 
         public String concatenateStrings2(String str1, String str2, String str3) {
 
@@ -130,47 +170,7 @@ public class OOP {
     //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
 
 
-    abstract class Figura {
-        int kolichestvoStoron ;
 
-        abstract void ploshad();
-
-    }
-
-    class Kryg extends Figura {
-        int kolichestvoStoron ;
-        int radius ;
-
-        public void ploshad() {
-
-
-            System.out.println("Ploshad kryga = " + 3.14 * radius + radius);
-
-        }
-    }
-
-    class Prymougolnik extends Figura {
-        int kolichestvoStoron ;
-        int storona1 ;
-        int storona2 ;
-
-        public void ploshad() {
-            System.out.println("Ploshad prymougolnika = " + storona1 * storona2);
-
-        }
-    }
-
-    class Treygolnik extends Figura {
-        int kolichestvoStoron ;
-        int storona1 ;
-
-        public void ploshad() {
-            System.out.println("Ploshad treygolnik = " + storona1 * storona1);
-
-
-        }
-
-    }
 
 
     // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
