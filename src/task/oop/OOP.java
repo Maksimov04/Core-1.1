@@ -25,18 +25,6 @@ public class OOP {
         System.out.println(c.concatenateStrings2("Ba", "Na", "Na"));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 // Реализуйте функциональность согласно описанию
@@ -62,7 +50,7 @@ public class OOP {
 
         }
 
-        public String returnString (String str) {
+        public String returnString(String str) {
 
             return str;
         }
@@ -104,7 +92,7 @@ public class OOP {
         }
 
         @Override
-        public String returnString (String str) {
+        public String returnString(String str) {
 
 
             return String.valueOf(str.charAt(0));
@@ -117,9 +105,9 @@ public class OOP {
         }
 
         @Override
-        public  String concatenateStrings(String str1, String str2) {
+        public String concatenateStrings(String str1, String str2) {
 
-            return  str1.concat(str2).substring(0,(str1.length()+str2.length())/2);
+            return str1.concat(str2).substring(0, (str1.length() + str2.length()) / 2);
 
         }
     }
@@ -132,7 +120,7 @@ public class OOP {
     //  4. Четвертый метод примет аргумент строку и выведет на экран "I am Child2" + переданная строка.
     //  5. Пятый метод принимает 3 строки и возвращает их конкатенацию.
 
-     public static class Child2 extends Parent {
+    public static class Child2 extends Parent {
 
 
         public int sum(int a, int b, int c) {
@@ -140,7 +128,7 @@ public class OOP {
         }
 
 
-        public int  sumFromString(String str1, String str2, String str3) {
+        public int sumFromString(String str1, String str2, String str3) {
             return Integer.parseInt(str1) + Integer.parseInt(str2) + Integer.parseInt(str3);
         }
 
@@ -150,10 +138,10 @@ public class OOP {
             return str1.concat(str2);
         }
 
-        public void printChild2 (String srt) {
+        public void printChild2(String srt) {
 
 
-            System.out.println("I am Child2"+srt);
+            System.out.println("I am Child2" + srt);
         }
 
 
@@ -170,55 +158,11 @@ public class OOP {
     //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
 
 
-
-
-
     // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
     //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
     //  в которых можно описать специфичные методы и свойства.
 
 
-    abstract class Sotrydnic {
-        String name;
-        int age;
-
-        abstract void informacia();
-
-
-    }
-
-    class Manage extends Sotrydnic {
-
-        String name = "Nikolai";
-        String name1 = "Ilya";
-        int age = 33;
-        int age1 = 24;
-
-        public void informacia() {
-
-            System.out.println("Manage 1: = " + name + " " + age);
-            System.out.println("Manage 2: = " + name1 + " " + age1);
-        }
-
-
-    }
-
-    class RabotnicSklada extends Sotrydnic {
-
-        String name = "Dima";
-        String name1 = "Petr";
-        int age = 44;
-        int age1 = 45;
-
-        public void informacia() {
-
-            System.out.println("RabotnicSklada 1: = " + name + " " + age);
-            System.out.println("RabotnicSklada 2 : = " + name1 + " " + age1);
-        }
-    }
-
 }
-
-
 
 
