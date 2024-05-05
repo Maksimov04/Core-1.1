@@ -2,6 +2,28 @@ package task.oop;
 
 public class OOP {
     public static void main(String[] args) {
+        Parent a = new Parent();
+        System.out.println(a.sum(2, 2));
+        System.out.println(a.sumFromString("4", 2));
+        System.out.println(a.returnString("HELLO"));
+        System.out.println("I am Parent");
+        System.out.println(a.concatenateStrings("Ban", "Ana"));
+
+        Child1 b = new Child1();
+        System.out.println(b.sum(4, 4));
+        System.out.println(b.sumFromString("2", 2));
+        System.out.println(b.returnString("Banana"));
+        System.out.println("I am Child1");
+        System.out.println(b.concatenateStrings("авиамодель", "авиамодель"));
+
+        Child2 c = new Child2();
+        System.out.println(c.sum(4, 4, 4));
+        System.out.println(c.sumFromString("2", "2", "2"));
+        System.out.println(c.concatenateStrings1("Ana", "Nas"));
+        String str = "Ilya";
+        System.out.println("I am Child2" + " " + str);
+        System.out.println(c.concatenateStrings2("Ba", "Na", "Na"));
+
 
     }
 
@@ -14,6 +36,40 @@ public class OOP {
     //  4. Метод, не принимающий и не возвращающий ничего, лишь выводящий на экран "I am Parent".
     //  5. Метод, возвращающий конкатенацию (сумму двух строк), принимающий 2 строки.
 
+    public static class Parent {
+        public int sum(int a, int b) {
+
+            return a + b;
+
+
+        }
+
+        public int sumFromString(String str, int num) {
+
+            return Integer.parseInt(str) + num;
+
+        }
+
+        public String returnString(String str) {
+
+            return str;
+        }
+
+        public void printParent() {
+
+            System.out.println();
+
+        }
+
+        public String concatenateStrings(String str1, String str2) {
+            return str1.concat(str2);
+
+
+        }
+
+
+    }
+
 
     // TODO: Создайте класс Child1 и переопределите все 5 методов.
     //  1. Первый метод переопределите так, что вместо суммы первый метод перемножает числа, а не складывает.
@@ -22,6 +78,40 @@ public class OOP {
     //  4. Четвертый метод выводит на экран "I am Child1".
     //  5. Пятый метод после слияния двух строк должен обрезать строку и вернуть только ее половину.
 
+    public static class Child1 extends Parent {
+        @Override
+        public int sum(int a, int b) {
+
+            return a * b;
+        }
+
+        @Override
+        public int sumFromString(String str, int num) {
+
+            return (Integer.parseInt(str) + num) * 2;
+        }
+
+        @Override
+        public String returnString(String str) {
+
+
+            return String.valueOf(str.charAt(0));
+        }
+
+        @Override
+        public void printParent() {
+
+            System.out.println();
+        }
+
+        @Override
+        public String concatenateStrings(String str1, String str2) {
+
+            return str1.concat(str2).substring(0, (str1.length() + str2.length()) / 2);
+
+        }
+    }
+
 
     // TODO: Создайте класс Child2 и перегрузите методы.
     //  1. Первый метод примет 3 числа и сложит их.
@@ -29,6 +119,38 @@ public class OOP {
     //  3. Третий метод примет две строки и вернет их конкатенацию.
     //  4. Четвертый метод примет аргумент строку и выведет на экран "I am Child2" + переданная строка.
     //  5. Пятый метод принимает 3 строки и возвращает их конкатенацию.
+
+    public static class Child2 extends Parent {
+
+
+        public int sum(int a, int b, int c) {
+            return a + b + c;
+        }
+
+
+        public int sumFromString(String str1, String str2, String str3) {
+            return Integer.parseInt(str1) + Integer.parseInt(str2) + Integer.parseInt(str3);
+        }
+
+
+        public String concatenateStrings1(String str1, String str2) {
+
+            return str1.concat(str2);
+        }
+
+        public void printChild2(String srt) {
+
+
+            System.out.println("I am Child2" + srt);
+        }
+
+
+        public String concatenateStrings2(String str1, String str2, String str3) {
+
+            return (str1.concat(str2).concat(str3));
+
+        }
+    }
 
 
     // TODO: Создайте абстрактный класс "Фигура", в котором определены общие свойства и методы для всех геометрических фигур
@@ -40,4 +162,7 @@ public class OOP {
     //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
     //  в которых можно описать специфичные методы и свойства.
 
+
 }
+
+
