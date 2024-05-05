@@ -2,19 +2,19 @@ package task.oop;
 
 public class WarehouseWorker extends Employee {
 
-    private int age = 28;
+    private int age;
 
-    private String name = " Dima";
+    private String name;
 
 
     @Override
     double name() {
-        return name() ;
+        return name();
     }
 
     @Override
     double age() {
-        return age  ;
+        return age;
     }
 
     public WarehouseWorker() {
@@ -24,32 +24,25 @@ public class WarehouseWorker extends Employee {
         return age;
     }
 
-    public void setAge(int age) {
+    public int setAge(int age) {
         this.age = age;
+        return age;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public String setName(String name) {
         this.name = name;
-    }
-    void speak() {
-        for (int i = 0; i < 1; i++) {
-            System.out.println("Работник склада  : Имя : " + name + ";" + " Возраст : " + age);
-
-
-        }
+        return name;
     }
 
     public static void main(String[] args) {
         WarehouseWorker a = new WarehouseWorker();
-        a.speak();
-        a.getAge();
-        a.getName();
-        a.setAge(26);
-        a.setName("Petr");
+        System.out.println("Warehouse worker :" + " Name " + a.setName("Petr") + " : " + "Age " + a.setAge(27));
+        System.out.println(a.getAge());
+        System.out.println(a.getName());
 
 
     }

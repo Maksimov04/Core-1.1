@@ -2,15 +2,17 @@ package task.oop;
 
 public class Manage extends Employee {
 
-    private int age = 25;
-    private String name = "Ilya";
+    private int age;
+    private String name;
 
-    public void setAge(int age) {
+    public int setAge(int age) {
         this.age = age;
+        return age;
     }
 
-    public void setName(String name) {
+    public String setName(String name) {
         this.name = name;
+        return name;
     }
 
     public int getAge() {
@@ -34,20 +36,14 @@ public class Manage extends Employee {
         return age();
     }
 
-    void speak() {
-        for (int i = 0; i < 1; i++) {
-            System.out.println("Мэнеджер : Имя : " + name + ";" + " Возраст : " + age);
-        }
-
-    }
 
     public static void main(String[] args) {
         Manage a = new Manage();
-        a.speak();
-        a.setAge(25);
-        a.setName("Masha");
-        a.getAge();
-        a.getName();
+
+        System.out.println("Manage : " + " Name " + a.setName("ILya") + " : " + "Age" + " " + a.setAge(30));
+        System.out.println(a.getName());
+        System.out.println(a.getAge());
+
 
     }
 }
